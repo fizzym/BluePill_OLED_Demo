@@ -10,6 +10,7 @@ Adafruit_SSD1306 display(OLED_RESET);
 
 //------------
 void setup() {
+  Serial.begin(9600);
   pinMode(LED_BUILTIN, OUTPUT);
 
   // by default, we'll generate the high voltage from the 3.3v line internally! (neat!)
@@ -36,4 +37,5 @@ void loop() {
   delay(1000);
   pinMode(LED_BUILTIN, LOW);
   delay(1000);
+  Serial.println("1");
 }
