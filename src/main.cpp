@@ -10,6 +10,7 @@ Adafruit_SSD1306 display(OLED_RESET);
 
 //------------
 void setup() {
+  pinMode(LED_BUILTIN, OUTPUT);
 
   // by default, we'll generate the high voltage from the 3.3v line internally! (neat!)
   display.begin(SSD1306_SWITCHCAPVCC, 0x3C);  // initialize with the I2C addr 0x3C (for the 128x64)
@@ -30,4 +31,9 @@ void setup() {
 }
 
 //------------
-void loop() {}
+void loop() {
+  pinMode(LED_BUILTIN, HIGH);
+  delay(1000);
+  pinMode(LED_BUILTIN, LOW);
+  delay(1000);
+}
